@@ -247,6 +247,7 @@ class CMakePreset:
         elif self.targetPlatform == 'linux':
             outString = outString + ' -DTARGET_BUILD_PLATFORM=linux'
             outString = outString + ' -DPX_OUTPUT_ARCH=x86'
+            outString = outString + ' -DCMAKE_TOOLCHAIN_FILE=' + os.environ['PM_CMakeModules_PATH'] + '/linux/LinuxRegular.cmake'
             if self.compiler == 'clang-crosscompile':
                 outString = outString + ' -DCMAKE_TOOLCHAIN_FILE=' + \
                     os.environ['PM_CMakeModules_PATH'] + \
